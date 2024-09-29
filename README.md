@@ -11,28 +11,56 @@ First project of the Java projects arc. Implementation of a simple Java program 
  git clone https://github.com/tlouro-c/ajav_launcher
 ```
 
-2. Go inside project's directory
+2. Navigate to the project directory:
+
 ```bash
  cd ajav_launcher
 ```
 
 ## Usage
 
-1. Compile
+1. Compile the program:
 ```bash
 find * -name "*.java" > sources.txt
 javac @sources.txt
 ```
 
-2. Create **scenario.txt**
-	The first line of the file contains a positive integer number. This number represents the
-	number of times the simulation is run. In our case, this will be the number of times a
-	weather change is triggered.
-	Each following line describes an aircraft that will be part of the simulation, with this
-	format: TYPE NAME LONGITUDE LATITUDE HEIGHT.
+2. Create the ```scenario.txt``` file:
 
-3. Run
+	The scenario.txt file defines the simulation parameters, including how many times the weather changes, and the aircraft involved. The structure is as follows:
+
+
+	- The first line contains a single positive integer, which specifies the number of times the simulation runs (i.e., how many times the weather will change).
+
+	- Each subsequent line describes an aircraft to be included in the simulation. The format is:
+	```
+	TYPE NAME LONGITUDE LATITUDE HEIGHT
+	```
+	Where:
+
+	- TYPE is the type of the aircraft (e.g., JetPlane, Helicopter, Baloon).
+	- NAME is the unique identifier for the aircraft.
+	- LONGITUDE, LATITUDE, and HEIGHT are integers representing the starting coordinates and altitude of the aircraft. The altitude (height) should range between 0 and 100.
+
+	Example of a ```scenario.txt``` file:
+
+	```
+	5
+	JetPlane J1 45 36 85
+	Helicopter H1 22 45 90
+	Baloon B1 12 18 50
+	JetPlane J2 30 22 75
+	Baloon B2 5 10 45
+	```
+	In this example:
+
+	- The simulation will run 5 times.
+	- Five aircraft are defined: two JetPlanes, one Helicopter, and two Balloons with their respective coordinates and altitudes.
+
+4. Run the simulation:
 ```bash
 java -cp src/main/java tc.tlouro_c.simulator.Simulator scenario.txt
 ```
+
+After running the simulation, the output will be displayed, showing how the aircraft react to different weather conditions based on their types and initial positions.
 
