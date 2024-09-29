@@ -22,16 +22,19 @@ public class Simulator {
 		}
 		try (BufferedReader buffer = new BufferedReader(new FileReader(args[0]))) {
 			numSimulations = Integer.parseInt(buffer.readLine());
+			if (numSimulations <= 0) {
+				throw new NumberFormatException();
+			}
 			loadAircrafts(buffer);
-			System.out.println("Start simulation");
-
+			
 			for (int i = 0; i < numSimulations; i++) {
 				weatherTower.changeWeather();
 			}
 
 			OutputFile.getInstance().close();
+
 		} catch (NumberFormatException e) {
-			System.err.println("Invalid number of simulations");
+			System.err.println("The number of simulations must be a positive integer number");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
