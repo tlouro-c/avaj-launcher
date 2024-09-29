@@ -1,10 +1,15 @@
 package tc.tlouro_c.simulator;
 
 import java.util.List;
+import java.util.ArrayList;
 import tc.tlouro_c.simulator.aircrafts.Flyable;
 
 public class Tower {
 	private List<Flyable> observers;
+
+	public Tower() {
+		observers = new ArrayList<>();
+	}
 
 	public void register(Flyable p_Flyable) {
 		observers.add(p_Flyable);
@@ -21,6 +26,8 @@ public class Tower {
 	}
 
 	protected void conditionChanged() {
-		//TODO
+		for (Flyable aircraft : observers) {
+			aircraft.updateConditions();
+		}
 	}
 }

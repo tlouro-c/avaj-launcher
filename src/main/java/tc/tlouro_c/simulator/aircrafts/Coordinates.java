@@ -15,29 +15,35 @@ public class Coordinates {
 		return longitude;
 	}
 
-	public void setLongitude(int longitude) {
-		this.longitude = longitude;
+	public void increaseLongitude(int longitudeIncrease) {
+		this.longitude += longitudeIncrease;
 	}
 
 	public int getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(int latitude) {
-		this.latitude = latitude;
+	public void increaseLatitude(int latitudeIncrease) {
+		this.latitude += latitudeIncrease;
 	}
 
 	public int getHeight() {
 		return height;
 	}
 
-	public void setHeight(int height) {
+	public void increaseHeight(int heightIncrease) {
+		this.height += heightIncrease;
 		if (height > 100) {
 			this.height = 100;
-		} else if (height < 0) {
-			this.height = 0;
-		} else {
-			this.height = height;
 		}
 	}
+
+	public void decreaseHeight(int heightDecrease) {
+		this.height -= heightDecrease;
+		if (height < 0) {
+			this.height = 0;
+		}
+	}
+
+
 }
