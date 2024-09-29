@@ -1,4 +1,4 @@
-package tc.tlouro_c.simulator.aircrafts;
+package tc.tlouro_c.simulator;
 
 public class Coordinates {
 	private int longitude;

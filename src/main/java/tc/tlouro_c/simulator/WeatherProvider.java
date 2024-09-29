@@ -1,6 +1,6 @@
 package tc.tlouro_c.simulator;
 
-import tc.tlouro_c.simulator.aircrafts.Coordinates;
+import java.util.Random;
 
 public class WeatherProvider {
 	String[] weather;
@@ -18,7 +18,11 @@ public class WeatherProvider {
 	}
 
 	public String getCurrentWeather(Coordinates p_coordinates) {
-		//TODO
-		return weather[0];
+		long seed = p_coordinates.getLongitude() 
+				* p_coordinates.getLatitude()
+				+ p_coordinates.getHeight();
+		int index = Math.abs(new Random(seed).nextInt()) % 4;
+		
+		return weather[index];
 	}
 }

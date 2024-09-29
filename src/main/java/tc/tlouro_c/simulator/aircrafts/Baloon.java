@@ -1,5 +1,9 @@
 package tc.tlouro_c.simulator.aircrafts;
 
+import tc.tlouro_c.simulator.utils.OutputFile;
+import tc.tlouro_c.simulator.Coordinates;
+import java.io.IOException;
+
 public class Baloon extends Aircraft {
 	
 	Baloon(long p_id, String p_name, Coordinates p_coordinate) {
@@ -9,6 +13,7 @@ public class Baloon extends Aircraft {
 	@Override
 	public void updateConditions() {
 		String weather = weatherTower.getWeather(coordinates);
+		String message = "";
 
 		switch (weather) {
 			case "SUN":
@@ -28,6 +33,12 @@ public class Baloon extends Aircraft {
 				message = "I'm afraid we might fall with all this snow...";
 				coordinates.decreaseHeight(15);
 				break;
+		}
+
+		try {
+			OutputFile.getInstance().write(this + ": " + message + "\n");
+		} catch (IOException e) {
+			System.err.println("Error writing to the output file");
 		}
 
 		if (coordinates.getHeight() <= 0) {

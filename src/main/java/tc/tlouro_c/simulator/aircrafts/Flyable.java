@@ -4,7 +4,7 @@ import tc.tlouro_c.simulator.WeatherTower;
 
 public abstract class Flyable {
 
-	protected WeatherTower weatherTower;
+	protected WeatherTower	weatherTower;
 
 	public abstract void updateConditions();
 

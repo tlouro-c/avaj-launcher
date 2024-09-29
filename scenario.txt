@@ -1,0 +1,6 @@
+25
+Baloon B1 2 3 10
+Baloon B2 1 8 30
+JetPlane J1 23 44 10
+
+

@@ -1,32 +1,41 @@
 package tc.tlouro_c.simulator;
 
 import java.util.List;
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.io.IOException;
 import tc.tlouro_c.simulator.aircrafts.Flyable;
+import tc.tlouro_c.simulator.utils.OutputFile;
 
 public class Tower {
-	private List<Flyable> observers;
+	private List<Flyable> observers =  new CopyOnWriteArrayList<>();
 
 	public Tower() {
-		observers = new ArrayList<>();
 	}
 
-	public void register(Flyable p_Flyable) {
-		observers.add(p_Flyable);
+	public void register(Flyable p_flyable) {
+		this.observers.add(p_flyable);
 
-		System.out.println(String.format(
-			"Tower says: %s registered to weather tower.", p_Flyable));
+		try {
+			OutputFile.getInstance().write(String.format(
+				"Tower says: %s registered to weather tower.\n", p_flyable));
+		} catch (IOException e) {
+			System.err.println("Error writing to the output file");
+		}
 	}
 
-	public void unregister(Flyable p_Flyable) {
-		observers.remove(p_Flyable);
+	public void unregister(Flyable p_flyable) {
+		this.observers.remove(p_flyable);
 
-		System.out.println(String.format(
-			"Tower says: %s unregistered to weather tower.", p_Flyable));
+		try {
+			OutputFile.getInstance().write(String.format(
+				"Tower says: %s unregistered to weather tower.\n", p_flyable));
+		} catch (IOException e) {
+			System.err.println("Error writing to the output file");
+		}
 	}
 
 	protected void conditionChanged() {
-		for (Flyable aircraft : observers) {
+		for (Flyable aircraft : this.observers) {
 			aircraft.updateConditions();
 		}
 	}
