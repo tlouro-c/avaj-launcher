@@ -68,6 +68,7 @@ After running the simulation, the output will be displayed, showing how the airc
 ## Output Example
 
 ```
+% cat simulation.txt 
 Tower says: Baloon#B1(1) registered to weather tower.
 Tower says: Baloon#B2(2) registered to weather tower.
 Tower says: JetPlane#J1(3) registered to weather tower.
