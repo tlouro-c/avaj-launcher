@@ -45,5 +45,9 @@ public class Coordinates {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "(LONGITUDE=" + longitude + ", LATITUDE=" + latitude + ", HEIGHT=" + height + ")";
+	}
 
 }

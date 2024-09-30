@@ -65,3 +65,40 @@ java -cp src/main/java tc.tlouro_c.simulator.Simulator scenario.txt
 
 After running the simulation, the output will be displayed, showing how the aircraft react to different weather conditions based on their types and initial positions.
 
+## Output Example
+
+```
+Tower says: Baloon#B1(1) registered to weather tower.
+Tower says: Baloon#B2(2) registered to weather tower.
+Tower says: JetPlane#J1(3) registered to weather tower.
+Tower says: Helicopter#H1(4) registered to weather tower.
+
+Simulation 1
+Baloon#B1(1): I'm afraid we might fall with all this snow... (LONGITUDE=2, LATITUDE=3, HEIGHT=5)
+Baloon#B2(2): I'm afraid we might fall with all this snow... (LONGITUDE=1, LATITUDE=8, HEIGHT=51)
+JetPlane#J1(3): Eventually we will land if this snows continues... (LONGITUDE=23, LATITUDE=44, HEIGHT=25)
+Helicopter#H1(4): I'm freezing, turn on AC please... (LONGITUDE=654, LATITUDE=33, HEIGHT=8)
+
+Simulation 2
+Baloon#B1(1): I'm afraid we might fall with all this snow... (LONGITUDE=2, LATITUDE=3, HEIGHT=0)
+Tower says: Baloon#B1(1) unregistered to weather tower.
+Baloon#B2(2): Rain, rain, rain go away, let the sun come out and all the children say... (LONGITUDE=1, LATITUDE=8, HEIGHT=46)
+JetPlane#J1(3): Going crazy with this fog... (LONGITUDE=23, LATITUDE=45, HEIGHT=25)
+Helicopter#H1(4): Sun... All Of The Lights! (LONGITUDE=664, LATITUDE=33, HEIGHT=10)
+
+Simulation 3
+Baloon#B2(2): Rain, rain, rain go away, let the sun come out and all the children say... (LONGITUDE=1, LATITUDE=8, HEIGHT=41)
+JetPlane#J1(3): Eventually we will land if this snows continues... (LONGITUDE=23, LATITUDE=45, HEIGHT=18)
+Helicopter#H1(4): Sun... All Of The Lights! (LONGITUDE=674, LATITUDE=33, HEIGHT=12)
+
+Simulation 4
+Baloon#B2(2): And the weather so breezy. Man, why can't life always be this easy? (LONGITUDE=3, LATITUDE=8, HEIGHT=45)
+JetPlane#J1(3): Eventually we will land if this snows continues... (LONGITUDE=23, LATITUDE=45, HEIGHT=11)
+Helicopter#H1(4): Sun... All Of The Lights! (LONGITUDE=684, LATITUDE=33, HEIGHT=14)
+
+Simulation 5
+Baloon#B2(2): I'm afraid we might fall with all this snow... (LONGITUDE=3, LATITUDE=8, HEIGHT=30)
+JetPlane#J1(3): Going crazy with this fog... (LONGITUDE=23, LATITUDE=46, HEIGHT=11)
+Helicopter#H1(4): Rain... Again... But on the heli... (LONGITUDE=689, LATITUDE=33, HEIGHT=14)
+```
+

@@ -28,6 +28,7 @@ public class Simulator {
 			loadAircrafts(buffer);
 			
 			for (int i = 0; i < numSimulations; i++) {
+				OutputFile.getInstance().write(String.format("\nSimulation %d\n", i + 1));
 				weatherTower.changeWeather();
 			}
 
@@ -36,7 +37,6 @@ public class Simulator {
 		} catch (NumberFormatException e) {
 			System.err.println("The number of simulations must be a positive integer number");
 		} catch (Exception e) {
-			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
 	}

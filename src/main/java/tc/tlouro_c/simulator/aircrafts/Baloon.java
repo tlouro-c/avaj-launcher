@@ -36,7 +36,7 @@ public class Baloon extends Aircraft {
 		}
 
 		try {
-			OutputFile.getInstance().write(this + ": " + message + "\n");
+			OutputFile.getInstance().write(this + ": " + message + " " + this.coordinates + "\n");
 		} catch (IOException e) {
 			System.err.println("Error writing to the output file");
 		}
