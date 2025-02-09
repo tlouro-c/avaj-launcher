@@ -3,7 +3,7 @@
 ## Description
 This project is part of the Java projects arc and involves creating a simple simulation program using Java. The program models aircraft and their behavior in response to weather changes, following a provided UML class diagram. The simulation runs based on input from a configuration file (```scenario.txt```), where aircraft are described and their interactions with weather conditions are simulated.
 
-![![Uml Diagram](avaj_uml.png)]
+![Uml Diagram](avaj_uml.png)
 
 ## Installation 
 
@@ -68,6 +68,7 @@ After running the simulation, the output will be displayed, showing how the airc
 ## Output Example
 
 ```
+% cat simulation.txt 
 Tower says: Baloon#B1(1) registered to weather tower.
 Tower says: Baloon#B2(2) registered to weather tower.
 Tower says: JetPlane#J1(3) registered to weather tower.
