@@ -7,7 +7,7 @@ import tc.tlouro_c.simulator.aircrafts.Flyable;
 import tc.tlouro_c.simulator.utils.OutputFile;
 
 public class Tower {
-	private List<Flyable> observers =  new CopyOnWriteArrayList<>();
+	private final List<Flyable> observers =  new CopyOnWriteArrayList<>();
 
 	public Tower() {
 	}
@@ -35,8 +35,9 @@ public class Tower {
 	}
 
 	protected void conditionChanged() {
-		for (Flyable aircraft : this.observers) {
-			aircraft.updateConditions();
-		}
+
+        for (Flyable aircraft : observers) {
+            aircraft.updateConditions();
+        }
 	}
 }

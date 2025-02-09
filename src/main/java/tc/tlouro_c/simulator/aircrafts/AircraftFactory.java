@@ -42,7 +42,7 @@ public class AircraftFactory {
 			return new Helicopter(aircraftsProduced, p_name, p_coordinates);
 		} else if (p_type.equalsIgnoreCase("BALOON")) {
 			aircraftsProduced++;
-			return new Baloon(aircraftsProduced, p_name, p_coordinates);
+			return new Balloon(aircraftsProduced, p_name, p_coordinates);
 		}
 		throw new InvalidData("This factory doesn't produce that type of aircraft");
 	}

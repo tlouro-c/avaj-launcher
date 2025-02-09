@@ -4,9 +4,9 @@ import tc.tlouro_c.simulator.utils.OutputFile;
 import tc.tlouro_c.simulator.Coordinates;
 import java.io.IOException;
 
-public class Baloon extends Aircraft {
+public class Balloon extends Aircraft {
 	
-	Baloon(long p_id, String p_name, Coordinates p_coordinate) {
+	Balloon(long p_id, String p_name, Coordinates p_coordinate) {
 		super(p_id, p_name, p_coordinate);
 	}
 
@@ -48,6 +48,6 @@ public class Baloon extends Aircraft {
 
 	@Override
 	public String toString() {
-		return String.format("Baloon#%s(%d)", name, id);
+		return String.format("Balloon#%s(%d)", name, id);
 	}
 }

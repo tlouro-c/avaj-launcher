@@ -1,3 +1,7 @@
 *.class
 sources.txt
 simulation.txt
+.idea
+.vscode
+avaj-launcher.iml
+.DS_Store
